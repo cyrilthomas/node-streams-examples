@@ -11,8 +11,10 @@ readStream.on('readable', function() {
   // read the data
   while (data = this.read()) {
     console.log('reading data: %d', data.length);
-  }
+  } 
+});
 
+readStream.on('end', function() { 
   // reading has finished
   console.log('data finished streaming.');
 });
