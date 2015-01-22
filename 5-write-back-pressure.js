@@ -8,11 +8,12 @@ var fs = require('fs')
 copy();
 
 function copy() {
-  var data = file.slice(written, written + size)
-    , ready = true;
+  var ready = true
+    , data;
 
   // iterate over the sliced data
   do {
+    data = file.slice(written, written + size);
     ready = writeStream.write(data);
     written += data.length;
 
